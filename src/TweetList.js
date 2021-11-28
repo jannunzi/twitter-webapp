@@ -14,7 +14,8 @@ const TweetList = () => {
       {
         tweets.map(tweet =>
         <li key={tweet.tweetId}>
-          {tweet.tweet}
+          <p>{tweet.tweet}</p>
+          Likes: {tweet.likesCount}
         </li>
         )
       }
