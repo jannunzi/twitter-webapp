@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import Tweet from "./Tweet";
 
 const TweetList = () => {
   const [tweets, setTweets] = useState([]);
@@ -14,8 +15,10 @@ const TweetList = () => {
       {
         tweets.map(tweet =>
         <li key={tweet.tweetId}>
-          <p>{tweet.tweet}</p>
-          Likes: {tweet.likesCount}
+          <Link to={`/tweets/${tweet.tweetId}`}>
+            More...
+          </Link>
+          <Tweet tweet={tweet}/>
         </li>
         )
       }
